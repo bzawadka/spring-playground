@@ -10,4 +10,9 @@ public class HelloController {
     public String index() {
         return "Greetings from Spring Boot!";
     }
+
+    @RequestMapping("/resource")
+    public MyResource resource() {
+        return new MyResource(1, "myValue");
+    }
 }
