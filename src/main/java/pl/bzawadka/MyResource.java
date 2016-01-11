@@ -9,6 +9,7 @@ public class MyResource {
     /**
      * Jackson deserialization with immutable object without stupid annotations:
      * http://stackoverflow.com/questions/4822856/does-jackson-without-annotations-absolutely-require-setters
+     * OR Jackson 1.8
      */
     public MyResource(@JsonProperty("id") int id, @JsonProperty("value") String value) {
         this.id = id;
