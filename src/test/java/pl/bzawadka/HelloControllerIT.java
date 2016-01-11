@@ -32,7 +32,6 @@ public class HelloControllerIT {
 
     @Before
     public void setUp() throws Exception {
-        System.out.println("DUPA");
         this.baseUrl = new URL("http://localhost:" + port + "/");
         this.resourceUrl = new URL("http://localhost:" + port + "/resource");
         template = new TestRestTemplate();
