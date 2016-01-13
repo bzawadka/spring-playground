@@ -13,6 +13,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -41,6 +42,13 @@ public class HelloControllerTest {
         performGet("/resource")
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("{\"id\":1,\"value\":\"myValue\"}")));
+    }
+
+    @Test
+    public void getGreeting() throws Exception {
+        performGet("/hello?name=dafi")
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Hello, dafi!")));
     }
 
     private ResultActions performGet(String urlTemplate) throws Exception {
