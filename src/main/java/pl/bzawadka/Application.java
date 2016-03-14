@@ -12,7 +12,7 @@ import pl.bzawadka.repository.CustomerRepository;
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(Application.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
     @Autowired
     private CustomerRepository repository;
@@ -31,7 +31,7 @@ public class Application implements CommandLineRunner {
 
         // save a couple of customers
         repository.save(new Customer("Alice", "Smith"));
-        repository.save(new Customer("Bob", "Smith"));
+        repository.save(new Customer("Bob", "Johnson"));
 
         // fetch all customers
         LOGGER.info("---- Customers found with findAll():");
