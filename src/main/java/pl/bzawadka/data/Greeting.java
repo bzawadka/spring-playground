@@ -1,4 +1,4 @@
-package pl.bzawadka;
+package pl.bzawadka.data;
 
 public class Greeting {
     private final long id;
